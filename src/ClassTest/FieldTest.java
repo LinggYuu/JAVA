@@ -12,6 +12,7 @@ class User{
     }//food为形参,为局部变量
     public void speak(){
         String lan = "chinese";//lan为局部变量
+        //非形参的局部变量初始化一下
         System.out.println("我讲 "+lan);
     }
 }
