@@ -16,7 +16,7 @@ public class CinCout {
 //        ad = in.nextInt();
 //        System.out.println(ad);
 //        for(int i=0;i<str.length;i++){
-//            str[i] = in.nextLine();
+//            str[i] = in.next Line();
 //        }
 //        System.out.println(Arrays.toString(str));
 //        double r = Math.random()*10;
