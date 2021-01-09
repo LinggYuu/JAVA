@@ -1,12 +1,10 @@
-package ClassTest;
+package methodtest;
 
-import java.util.Scanner;
-
-public class FieldTest {
+public class MethodTest {
     public static void main(String[] args) {
-        User au = new User();
-        int age = au.age(4);
-        System.out.println("my age is "+age);
+        RetTest ar = new RetTest();
+        ar.age=18;
+        System.out.println(ar.getName());
     }
 }
 
@@ -25,4 +23,14 @@ class User{
     public int age(int age){
         return age;
     }
+}
+class RetTest{
+    //method 指定了返回值就必须要能有返回值
+    int age;
+    public String getName(){
+        if(age>=18)  return"成年了";//if只有这一步会报错
+        //因为返回值要所有情况下都有，所以else情况下也得有返回值
+        return"小盆宇";
+    }
+
 }
