@@ -1,8 +1,7 @@
 package equalstest;
 
 
-// ==是一个运算符，可以使用在基本数据类型变量和引用数据类型变量中
-//使用在基本类型变量中就是比数值是否相等
+
 
 public class EqualsTest {
     public static void main(String[] args) {
