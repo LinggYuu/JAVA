@@ -23,6 +23,7 @@ class man extends Person{
         System.out.println(man.sex);
         am.show();
         Person ap = new man();
+        //多态得到体现
         ap.show();
 
     }
