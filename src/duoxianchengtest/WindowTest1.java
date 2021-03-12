@@ -8,16 +8,21 @@ package duoxianchengtest;
 class Window1 implements Runnable{
 
     private int ticket =100;//没有加static
-
+    Object obj = new Object();
     @Override
     public void run() {
         while (true){
-            if(ticket>0){
-                System.out.println(Thread.currentThread().getName()+"：买票，票号为"+ticket);
-                ticket--;
-            }else {
-                break;
+            synchronized(this){//线程安全，同步，可以用obj，也可以用this
+                // (this是唯一的Window1的对象)，也可以用别的如obj什么的，只要保持唯一
+                if(ticket>0){
+                    System.out.println(Thread.currentThread().getName()+
+                            "：买票，票号为"+ticket);
+                    ticket--;
+                }else {
+                    break;
+                }
             }
+
         }
     }
 }

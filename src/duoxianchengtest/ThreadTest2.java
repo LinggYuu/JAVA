@@ -2,7 +2,7 @@ package duoxianchengtest;
 
 /*
 创建多线程方式2：实现runnable接口
- 
+
 
  */
 
