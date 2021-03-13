@@ -46,7 +46,8 @@ class Bank{
 
     }
     public static void ii(){
-        System.out.println(id=3);
+        System.out.println(id=3);//静态方法的只能调静态变量
     }
 
 }
+

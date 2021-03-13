@@ -1,35 +1,33 @@
 package duoxianchengtest;
 
 /*
-创建三个窗口卖票，总票数为100张,使用实现runnable的方式
+使用同步方法解决线程安全问题
 
  */
 
-class Window1 implements Runnable{
+class Window3 implements Runnable{
 
     private int ticket =100;//没有加static
     Object obj = new Object();
     @Override
-    public void run() {
-        while (true){
-            synchronized(this){//线程安全，同步，可以用obj，也可以用this
-                // (this是唯一的Window1的对象)，也可以用别的如obj什么的，只要保持唯一
-                if(ticket>0){
-                    System.out.println(Thread.currentThread().getName()+
-                            "：买票，票号为"+ticket);
-                    ticket--;
-                }else {
-                    break;
-                }
+    public  void run() {//不能把run改成synchronized，因为它会把while包含了进去
+        while (ticket > 0){
+                show();
             }
+    }
 
+    public synchronized void show(){//在同步方法中，它的监视器就是this
+        if(ticket>0){
+            System.out.println(Thread.currentThread().getName()+
+                    "：买票，票号为"+ticket);
+            ticket--;
         }
     }
 }
 
 
 
-public class WindowTest1 {
+public class WindowTest3 {
     public static void main(String[] args) {
         Window1 w = new Window1();
         //此时，因为只创建了一个Window1对象，因而ticket不用加static
